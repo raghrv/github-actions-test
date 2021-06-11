@@ -6,12 +6,17 @@ jobs:
   job-run-shell-commnad:
     runs-on: ubuntu-latest
     steps:
-      - name: Echo a string
+      - name: Bash Shell - Echo a string
         run: echo "Hello Actions 1"
       
-      - name: Multiline script
+      - name: Bash Shell - Multiline script
         run: |
           echo "Hello" 
           node -v
           npm -v
+      - name: Python Shell Commands
+        run: |
+          import platform
+          print(platform.processor())
+        shell: python
 
