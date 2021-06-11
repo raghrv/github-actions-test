@@ -10,6 +10,10 @@ jobs:
         run: |
           pwd
           ls -a
+          echo GITHUB_SHA $GITHUB_SHA
+          echo GITHUB_REPOSITORY $GITHUB_REPOSITORY
+          echo GITHUB_WORPLACE $GITHUB_WORPLACE
+          echo "git token ${{ github.token }}"
       - name: Checkout
         uses: actions/checkout@v1
 
