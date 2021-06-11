@@ -1,6 +1,6 @@
 name: Shell Commands
 
-on: [pull_request]
+on: [push, pull_request]
 
 jobs:
   job-run-shell-commnad:
@@ -19,4 +19,16 @@ jobs:
           import platform
           print(platform.processor())
         shell: python
-
+  job-windows-shell-command:
+    runs-on: windows-latest
+    steps:
+      - name: Get working Dir
+        run: Get-Location
+      - name: Get Shell Working Dir
+        run: pwd
+        shell: bash
+      - name: Python Get working dir
+        run: |
+          import os
+          print(os.getcwd())
+        shell: python
