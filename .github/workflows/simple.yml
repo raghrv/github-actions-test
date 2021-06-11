@@ -1,6 +1,6 @@
 name: Shell Commands
 
-on: [pull_request]
+on: [push, pull_request]
 
 jobs:
   job-run-shell-commnad:
@@ -26,7 +26,7 @@ jobs:
         run: Get-Location
       - name: Get Shell Working Dir
         run: pwd
-        shell: shell
+        shell: bash
       - name: Python Get working dir
         run: |
           import os
