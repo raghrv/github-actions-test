@@ -20,9 +20,10 @@ jobs:
           print(platform.processor())
         shell: python
   job-windows-shell-command:
+    needs: [job-run-shell-commnad]
     runs-on: windows-latest
     steps:
-      - name: Get working Dir
+      - name: Get working DiR
         run: Get-Location
       - name: Get Shell Working Dir
         run: pwd
