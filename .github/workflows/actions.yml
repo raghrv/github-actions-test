@@ -1,6 +1,12 @@
 name: Github Actions
 
-on: [push]
+on: 
+  push:
+  pull_request:
+    types:
+      - closed
+      - assigned
+      - reopened
 
 jobs:
   running-github-js-actions:
@@ -17,7 +23,6 @@ jobs:
       - name: Checkout
         #https://github.com/actions/checkout#usage
         uses: actions/checkout@v1
-
       - name: List After Checkout
         run: | 
           pwd
@@ -30,4 +35,4 @@ jobs:
             Raghav
       - name: Greeting time
         run: echo "Greeting Time:${{ steps.greet.outputs.time }}"
-
+        
