@@ -1,32 +1,11 @@
 name: Github Actions
 
-on: 
-  push:
-  pull_request:
-    types:
-      - closed
-      - assigned
-      - reopened
+on: [push]
 
 jobs:
   running-github-js-actions:
     runs-on: ubuntu-latest
     steps:
-      - name: List Files
-        run: |
-          pwd
-          ls -a
-          echo GITHUB_SHA $GITHUB_SHA
-          echo GITHUB_REPOSITORY $GITHUB_REPOSITORY
-          echo GITHUB_WORKSPACE $GITHUB_WORKSPACE
-          echo "git token ${{ github.token }}"
-      - name: Checkout
-        #https://github.com/actions/checkout#usage
-        uses: actions/checkout@v1
-      - name: List After Checkout
-        run: | 
-          pwd
-          ls -a 
       - name: Simple JS Action
         id: greet
         uses: actions/hello-world-javascript-action@v1
@@ -35,4 +14,4 @@ jobs:
             Raghav
       - name: Greeting time
         run: echo "Greeting Time:${{ steps.greet.outputs.time }}"
-        
+
