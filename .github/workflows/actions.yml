@@ -1,12 +1,27 @@
 name: Github Actions
 
+#on: 
+  #push:
+
+  #pull_request:
+  #  types:
+  #    - opened
+  #    - assigned
+  #    - closed
+
 on: 
-  push:
-  pull_request:
-    types:
-      - closed
-      - assigned
-      - reopened
+  schedule:
+    - cron: "0/5 * * * *"
+    
+    # https://crontab.guru/
+    # minute  -- hour -- day(of month) -- month -- day(of week)
+    # * any value
+    # , value list seperator
+    # - range of values
+    # / step values
+    # @yearly @anually @montly (non standard)
+
+
 
 jobs:
   running-github-js-actions:
