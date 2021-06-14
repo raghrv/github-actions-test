@@ -9,10 +9,10 @@ name: Github Actions
   #    - assigned
   #    - closed
 
-on: 
-  schedule:
-    - cron: "0/5 * * * *"
-    
+#on: 
+  #schedule:
+  #  - cron: "0/5 * * * *"
+
     # https://crontab.guru/
     # minute  -- hour -- day(of month) -- month -- day(of week)
     # * any value
@@ -22,6 +22,9 @@ on:
     # @yearly @anually @montly (non standard)
 
 
+on:
+  repository_dispatch:
+    types: [build]
 
 jobs:
   running-github-js-actions:
