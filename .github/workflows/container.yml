@@ -12,6 +12,7 @@ jobs:
 
       - name: List Files
         run: ll -a
+        shell: bash
       - name: Run a script
         uses: docker://node:12-alpine3.12
         with:
