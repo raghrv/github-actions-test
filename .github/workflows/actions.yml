@@ -1,5 +1,20 @@
 name: Github Actions
 
+on:
+  push:
+    branches:
+      - "master"
+      - "feature/*" #matches feature/Ads and feature/dsC but not feature/sdsd/sds
+      - "feature/**" # matche with any number of / feature/sdsd/sds
+      - "!features/featC"
+    tags:
+      - "v1.*"
+    #paths:
+    #  - "**.js"
+    paths-ignore:
+      - "*.docx"
+      - "!**.js"
+      
 #on: 
   #push:
 
@@ -22,9 +37,26 @@ name: Github Actions
     # @yearly @anually @montly (non standard)
 
 
-on:
-  repository_dispatch:
-    types: [build]
+#on:
+#  repository_dispatch:
+#    types: [build]
+    #import requests
+    #import json
+
+    #url = "https://api.github.com/repos/raghrv/github-actions-test/dispatches"
+
+    #payload = json.dumps({
+    #  "event_type": "build"
+    #})
+    #headers = {
+    #  'Accept': 'application/vnd.github.v3+json',
+    #  'Authorization': 'Basic OmdocF9aVTlLY1c1MHlBQ2d6MmY5Yms4d09CWkVGTHhEbWYyQVFQS1u=',
+    #  'Content-Type': 'application/json',
+    #  'Cookie': '_octo=GH1.1.608399341.1623677039; logged_in=no'
+    #}
+
+    #response = requests.request("POST", url, headers=headers, data=payload)
+    #print(response.text)
 
 jobs:
   running-github-js-actions:
