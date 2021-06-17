@@ -8,10 +8,11 @@ jobs:
     container:
       image: node:latest
     steps:
+      - name: actions/checkout@v1
       - name: Run a script
         uses: docker://node:latest
         with:
-          entrypoint: ./setup.sh
+          entrypoint: ./setup1.sh
           args: Raghav
       - name: node version
         run: node -v
