@@ -10,6 +10,6 @@ jobs:
     steps:
       - name: Log node version
         run: |
-          node v
+          node -v
           cat /etc/os-release
 
