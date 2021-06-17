@@ -3,6 +3,24 @@ name: Container
 on: push
 
 jobs:
+  docker-container:
+    runs-on: ubuntu-latest
+    container:
+      image: node:latest
+    steps:
+      - name: node version
+        run: node -v
+      - name: step wit docker-container
+        uses: docker://node:latest
+        with:
+          entrypoint: '/bin/echo'
+          args: 'Hello world'
+      - name: step wit docker-container
+        uses: docker://node:latest
+        with:
+          entrypoint: '/usr/local/bin/nonde'
+          args: -v
+          
   node-docker:
     runs-on: ubuntu-latest
     services:
