@@ -9,7 +9,7 @@ jobs:
       image: node:latest
     steps:
       - name: Run a script
-        uses: node:latest
+        uses: docker://node:latest
         with:
           entrypoint: ./setup.sh
           args: Raghav
