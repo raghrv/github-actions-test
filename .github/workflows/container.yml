@@ -8,6 +8,10 @@ jobs:
     container:
       image: node:latest
     steps:
+      - name: Run a script
+        with:
+          entrypoint: ./setup.sh
+          args: Raghav
       - name: node version
         run: node -v
       - name: step wit docker-container
