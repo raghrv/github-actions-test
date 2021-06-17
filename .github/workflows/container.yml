@@ -18,9 +18,9 @@ jobs:
       - name: step wit docker-container
         uses: docker://node:latest
         with:
-          entrypoint: '/usr/local/bin/nonde'
+          entrypoint: '/usr/local/bin/node'
           args: -v
-          
+
   node-docker:
     runs-on: ubuntu-latest
     services:
