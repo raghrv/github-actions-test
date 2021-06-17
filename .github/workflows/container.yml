@@ -8,6 +8,16 @@ jobs:
     container:
       image: node:latest
     steps:
+      - uses: actions/checkout@v1
+
+      - name: List Files
+        run: ll -a
+      - name: Run a script
+        uses: docker://node:12-alpine3.12
+        with:
+          entrypoint: ./setup1.sh
+          args: "Raghav"
+
       - name: node version
         run: node -v
       - name: step wit docker-container
@@ -20,13 +30,6 @@ jobs:
         with:
           entrypoint: '/usr/local/bin/node'
           args: -v
-          
-      - uses: actions/checkout@v1
-      - name: Run a script
-        uses: docker://node:12-alpine3.12
-        with:
-          entrypoint: ./setup1.sh
-          args: "Raghav"
   node-docker:
     runs-on: ubuntu-latest
     services:
