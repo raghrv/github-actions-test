@@ -16,7 +16,7 @@ jobs:
           entrypoint: '/bin/echo'
           args: 'Hello world'
       - name: step wit docker-container
-        uses: docker://node:latest
+        uses: docker://node:12-alpine3.12
         with:
           entrypoint: '/usr/local/bin/node'
           args: -v
